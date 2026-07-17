@@ -36,7 +36,7 @@ public class PartATest {
         String[][] result = PartA.solveLogicPuzzle();
         assertEquals("Bob", result[0][0]);
         assertEquals("Dog", result[1][0]);
-        assertEquals("Priya", result[0][2]);
+        assertEquals("Lane", result[0][2]);
         assertEquals("Cat", result[1][2]);
     }
 

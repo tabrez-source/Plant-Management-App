@@ -37,6 +37,8 @@ public class PartA {
      * 
      * This method was generated with the assistance of ChatGPT based on the prompt:
      * "Create a Java method to filter and tag strings with operations CLEAN, TAG, and BOTH."
+     * For the BOTH operation, apostrophes and all occurrences of remChar are removed;
+     * tag_count includes only occurrences of remChar.
      */
     public static PlantTagResult tagAndFilter(String str, String remChar, String operation) {
         String result = str;
@@ -52,9 +54,8 @@ public class PartA {
                 tag_count = 0;
             }
             case "BOTH" -> {
-                int apostropheCount = str.length() - str.replace("'", "").length();
-                result = str.replace("'", "");
-                tag_count = str.length() - str.replace(remChar, "").length() + apostropheCount;
+                result = str.replace("'", "").replace(remChar, "");
+                tag_count = str.length() - str.replace(remChar, "").length();
             }
             default -> throw new IllegalArgumentException("Invalid operation: " + operation);
         }
@@ -69,6 +70,8 @@ public class PartA {
      * 
      * This method was generated with the assistance of ChatGPT based on the prompt:
      * "Create a Java method to solve a logic puzzle matching students to their pets."
+     * The authoritative zero-based column mapping is Bob/Dog, Priya/Hamster,
+     * Lane/Cat, Yien/Fish, and Jane/Bird.
      */
     public static String[][] solveLogicPuzzle() {
         String[][] result = new String[2][5];

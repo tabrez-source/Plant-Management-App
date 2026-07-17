@@ -18,10 +18,10 @@ public class PartBTest {
     }
 
     @Test
-    public void testAddPlant() {
-        // Add a plant and verify its addition
+    public void testCalculateTotalValueForSinglePlant() {
         partB.addPlant("Rose", "Flowering Plant", 10.0, "A type of woody perennial plant of the genus Rosa.");
-        assertEquals(1, partB.calculateTotalValue(), "The plant list should have 1 item after adding.");
+        assertEquals(10.0, partB.calculateTotalValue(),
+                "The total value should be $10.0 for one plant priced at $10.0.");
     }
 
     @Test
